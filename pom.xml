@@ -8,46 +8,76 @@
     <artifactId>projectQAAutomation</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+
+    <properties>
+        <selenium.version>3.141.59</selenium.version>
+        <webdrivermanager.version>3.7.1</webdrivermanager.version>
+        <junit.version>4.12</junit.version>
+        <log4j-api.version>2.4.1</log4j-api.version>
+        <log4j-core.version>2.4.1</log4j-core.version>
+        <owner.version>1.0.10</owner.version>
+        <webdriver-factory.version>4.4</webdriver-factory.version>
+        <maven.surefire.version>2.22.2</maven.surefire.version>
+        <maven.compiler.version>8</maven.compiler.version>
+    </properties>
+
+
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>3.141.59</version>
+            <version>${selenium.version}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
-            <version>3.7.1</version>
+            <version>${webdrivermanager.version}</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/junit/junit -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
-            <version>2.4.1</version>
+            <version>${log4j-api.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
-            <version>2.4.1</version>
+            <version>${log4j-core.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.aeonbits.owner</groupId>
             <artifactId>owner-java8</artifactId>
-            <version>1.0.10</version>
+            <version>${owner.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ru.stqa.selenium</groupId>
+            <artifactId>webdriver-factory</artifactId>
+            <version>${webdriver-factory.version}</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${maven.compiler.version}</source>
+                    <target>${maven.compiler.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
